@@ -1,0 +1,7 @@
+.env
+aig
+__pycache__
+.vscode
+.DS_Store
+parquet
+vector-database
