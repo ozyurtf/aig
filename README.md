@@ -5,7 +5,11 @@ python3 -m venv aig
 ```
 
 ```bash
+# Mac/Linux
 source aig/bin/activate
+
+# Windows
+aig\Scripts\activate
 ```
 
 ```bash
