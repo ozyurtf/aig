@@ -1,5 +1,7 @@
 # Running Instructions 
 
+First, create a `.env` file and assign your OpenAI API key to a variable named `OPENAI_API_KEY`.
+
 ```bash
 python3 -m venv aig
 ```
