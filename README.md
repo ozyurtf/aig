@@ -55,7 +55,7 @@ Lastly, based on the ground truth data I created manually (which is located in t
 ```bash
 python evaluate.py \
     --gt-path ./ground-truth/ground_truth.json \
-    --alpha 0.0 \
+    --alpha 0.5 \
     --dense-emb-path ./vector-database/config_text-embedding-3-small_2000_100/aig.parquet \
     --top-k 10 \
     --embedding-model text-embedding-3-small \
