@@ -70,14 +70,12 @@ def build_embed_partition(embedding_model, batch_size=8):
 def index(args):
     embed_partition = build_embed_partition(args.embedding_model)
 
-    spark = SparkSession.builder \
-        .master('local[*]') \
-        .appName('AIG_RAG') \
-        .config('spark.executor.memory', '8g') \
-        .config('spark.driver.memory', '8g') \
-        .config('spark.sql.execution.arrow.pyspark.enabled', 'true') \
-        .config('spark.sql.shuffle.partitions', '8') \
-        .config('spark.driver.maxResultSize', '4g') \
+    spark = SparkSession.builder\
+        .master('local[*]')\
+        .appName('AIG_RAG')\
+        .config('spark.driver.memory', '8g')\
+        .config('spark.sql.execution.arrow.pyspark.enabled', 'true')\
+        .config('spark.sql.shuffle.partitions', '8')\
         .getOrCreate()
 
     train_path = Path(f"{args.parquet_dir}/edgar-train.parquet")
