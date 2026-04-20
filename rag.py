@@ -161,9 +161,31 @@ def rag(args):
         "top_k_years": top_k_years
     }
 
-
-
 if __name__ == "__main__":
     args = parse_args()
     result = rag(args)
     print(result["pred_answer"])
+
+# if __name__ == "__main__":
+#     args = parse_args()
+
+#     print("AIG RAG Chat\n")
+#     while True:
+#         try:
+#             query = input("You: ").strip()
+#         except (EOFError, KeyboardInterrupt):
+#             print("\nBye!")
+#             break
+
+#         if not query:
+#             continue
+#         if query.lower() in {"exit", "quit", "q"}:
+#             print("Bye!")
+#             break
+
+#         args.query = query 
+#         try:
+#             result = rag(args)
+#             print(f"\nAnswer: {result['pred_answer']}\n")
+#         except Exception as e:
+#             print(f"[error] {e}\n")
