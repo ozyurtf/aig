@@ -22,7 +22,7 @@ def parse_args():
     parser.add_argument("--query", type=str, required=True,
                         help="Query to run against the RAG pipeline")
     
-    parser.add_argument("--alpha", type=float, default=0.0,
+    parser.add_argument("--alpha", type=float, default=0.5,
                         help="Hybrid search balance: 0=pure BM25, 1=pure embedding")    
 
     parser.add_argument("--dense-emb-path", type=str, default="vector-database/config_text-embedding-3-small_2000_100/aig.parquet",
