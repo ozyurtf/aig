@@ -40,7 +40,7 @@ After splitting the sections into chunks and representing each chunk with a dens
 
 ```bash
 python rag.py \
-    --query "How much collateral did AIG hold at December 31, 2015?" \
+    --query "What was the amount of collateral AIG held to support reinsurance recoverables from unaffiliated reinsurers in 2012?" \
     --alpha 0.5 \
     --dense-emb-path ./vector-database/config_text-embedding-3-small_2000_100/aig.parquet \
     --top-k 10 \
