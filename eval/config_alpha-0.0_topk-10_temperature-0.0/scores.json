@@ -1,9 +1,9 @@
 {
     "retriever": {
-        "recall_k": 0.926,
-        "mrr": 0.45
+        "recall_k": 0.656,
+        "mrr": 0.428
     },
     "generator": {
-        "exact_match_score": 1.0
+        "exact_match_score": 0.933
     }
 }

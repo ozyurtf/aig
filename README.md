@@ -36,7 +36,7 @@ python indexing.py \
     --output-dir ./vector-database
 ```
 
-After splitting the sections into chunks and representing each chunk with a dense embedding, the next step is to retrieve relevant chunks and generate a response based on the user query. Here, a hybrid search is performed. In other words, when the user writes a query, the relevant chunks are retrieved using both a sparse retriever and a dense retriever. And the importance of these retrievers is controlled by the alpha parameter. Alpha = 0 means that we only take the sparse retriever’s (BM25) retrieved chunks into account. Alpha = 1 means that we only take the dense retriever’s retrieved chunks into account. I kept alpha = 0.5 by default.
+After splitting the sections into chunks and representing each chunk with a dense embedding, the next step is to retrieve relevant chunks and generate a response based on the user query. Here, a hybrid search is used. In other words, when the user writes a query, the relevant chunks are retrieved using both a sparse retriever and a dense retriever. And the importance of these retrievers is controlled by the alpha parameter. Alpha = 0 means that we only take the sparse retriever’s (BM25) retrieved chunks into account. Alpha = 1 means that we only take the dense retriever’s retrieved chunks into account. I kept alpha = 0.5 by default.
 
 ```bash
 python rag.py \

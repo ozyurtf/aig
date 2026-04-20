@@ -1,7 +1,7 @@
 [
     {
         "prompt_id": 0,
-        "prompt": "How much of the AIG's consolidated assets were located outside the United States and Canada in 2012? Return the answer in the exact format: <number> percent",
+        "prompt": "What proportion of AIG\u2019s consolidated assets in 2012 was held outside the United States and Canada? Return the answer in the exact format: <number> percent",
         "full_sentence": "As of December 31, 2012, approximately 11 percent of the consolidated assets of AIG were located outside the U.S. and Canada, including $260 million of cash and securities on deposit with regulatory authorities in those locations. See Note 3 to the Consolidated Financial Statements for additional geographic information. See Note 7 to the Consolidated Financial Statements for total carrying values of cash and securities deposited by our insurance subsidiaries under requirements of regulatory authorities.",
         "gt_answer": "11 percent",
         "year": "2012",
@@ -9,7 +9,7 @@
     },
     {
         "prompt_id": 1,
-        "prompt": "How much of the AIG's consolidated assets were located outside the United States and Canada in 2013?. Return the answer in the exact format: <number> percent",
+        "prompt": "What proportion of AIG\u2019s consolidated assets in 2013 was held outside the United States and Canada? Return the answer in the exact format: <number> percent",
         "full_sentence": "As of December 31, 2013, approximately 9 percent of the consolidated assets of AIG were located outside the U.S. and Canada, including $295 million of cash and securities on deposit with regulatory authorities in those locations. See Note 3 to the Consolidated Financial Statements for additional geographic information. See Note 6 to the Consolidated Financial Statements for total carrying values of cash and securities deposited by our insurance subsidiaries under requirements of regulatory authorities.",
         "gt_answer": "9 percent",
         "year": "2013",
@@ -17,7 +17,7 @@
     },
     {
         "prompt_id": 2,
-        "prompt": "How much of the AIG's consolidated assets were located outside the United States and Canada in 2014? Return the answer in the exact format: <number> percent",
+        "prompt": "What proportion of AIG\u2019s consolidated assets in 2014 was held outside the United States and Canada? Return the answer in the exact format: <number> percent",
         "full_sentence": "As of December 31, 2014, approximately 10 percent of our consolidated assets were located outside the U.S. and Canada, including $608 million of cash and securities on deposit with regulatory authorities in those locations. See Note 3 to the Consolidated Financial Statements for additional geographic information. See Note 6 to the Consolidated Financial Statements for total carrying amounts of cash and securities deposited by our insurance subsidiaries under requirements of regulatory authorities.",
         "gt_answer": "10 percent",
         "year": "2014",
@@ -25,7 +25,7 @@
     },
     {
         "prompt_id": 3,
-        "prompt": "How much of the AIG's consolidated assets were located outside the United States and Canada in 2016? Return the answer in the exact format: <number> percent",
+        "prompt": "What proportion of AIG\u2019s consolidated assets in 2016 was held outside the United States and Canada? Return the answer in the exact format: <number> percent",
         "full_sentence": "As of December 31, 2016, approximately 11 percent of our consolidated assets were located outside the U.S. and Canada, including $532 million of cash and securities on deposit with regulatory authorities in those locations. See Note 3 to the Consolidated Financial Statements for additional geographic information. See Note 6 to the Consolidated Financial Statements for total carrying values of cash and securities deposited by our insurance subsidiaries under requirements of regulatory authorities.",
         "gt_answer": "11 percent",
         "year": "2016",
@@ -33,7 +33,7 @@
     },
     {
         "prompt_id": 4,
-        "prompt": "How much of the AIG's consolidated assets were located outside the United States and Canada in 2017? Return the answer in the exact format: <number> percent",
+        "prompt": "What proportion of AIG\u2019s consolidated assets in 2017 was held outside the United States and Canada? Return the answer in the exact format: <number> percent",
         "full_sentence": "As of December 31, 2017, approximately 11 percent of our consolidated assets were located outside the U.S. and Canada, including $491 million of cash and securities on deposit with regulatory authorities in those locations.",
         "gt_answer": "11 percent",
         "year": "2017",
@@ -41,7 +41,7 @@
     },
     {
         "prompt_id": 5,
-        "prompt": "How much collateral did AIG hold in support of reinsurance recoverable assets from unaffiliated reinsurers at December 31, 2012? Only give the numerical output and stick with the writing style in the document",
+        "prompt": "What was the amount of collateral AIG held to support reinsurance recoverables from unaffiliated reinsurers in 2012? Only give the numerical output and stick with the writing style in the document",
         "full_sentence": "At December 31, 2012, we held $8.6 billion of collateral, in the form of funds withheld, securities in reinsurance trust accounts and/or irrevocable letters of credit, in support of reinsurance recoverable assets from unaffiliated reinsurers.",
         "gt_answer": "$8.6 billion",
         "year": "2012",
@@ -49,7 +49,7 @@
     },
     {
         "prompt_id": 6,
-        "prompt": "How much collateral did AIG hold in support of reinsurance recoverable assets from unaffiliated reinsurers at December 31, 2015? Only give the numerical output and stick with the writing style in the document",
+        "prompt": "What was the amount of collateral AIG held to support reinsurance recoverables from unaffiliated reinsurers in 2015? Only give the numerical output and stick with the writing style in the document",
         "full_sentence": "At December 31, 2015, we held $7.4 billion of collateral, in the form of funds withheld, securities in reinsurance trust accounts and/or irrevocable letters of credit, in support of reinsurance recoverable assets from unaffiliated reinsurers.",
         "gt_answer": "$7.4 billion",
         "year": "2015",
@@ -57,7 +57,7 @@
     },
     {
         "prompt_id": 7,
-        "prompt": "How much collateral did AIG hold in support of reinsurance recoverable assets from unaffiliated reinsurers at December 31, 2016? Only give the numerical output and stick with the writing style in the document",
+        "prompt": "What was the amount of collateral AIG held to support reinsurance recoverables from unaffiliated reinsurers in 2016? Only give the numerical output and stick with the writing style in the document",
         "full_sentence": "At December 31, 2016, we held $8.1 billion of collateral, in the form of funds withheld, securities in reinsurance trust accounts and/or evergreen letters of credit, in support of reinsurance recoverable assets from unaffiliated reinsurers.",
         "gt_answer": "$8.1 billion",
         "year": "2016",
@@ -65,7 +65,7 @@
     },
     {
         "prompt_id": 8,
-        "prompt": "How much collateral did AIG hold in support of reinsurance recoverable assets from unaffiliated reinsurers at December 31, 2017? Only give the numerical output and stick with the writing style in the document",
+        "prompt": "What was the amount of collateral AIG held to support reinsurance recoverables from unaffiliated reinsurers in 2017? Only give the numerical output and stick with the writing style in the document",
         "full_sentence": "At December 31, 2017, we held $20.5 billion of collateral, in the form of funds withheld, securities in reinsurance trust accounts and/or irrevocable letters of credit, in support of reinsurance recoverable assets from unaffiliated reinsurers.",
         "gt_answer": "$20.5 billion",
         "year": "2017",
@@ -73,7 +73,7 @@
     },
     {
         "prompt_id": 9,
-        "prompt": "How much collateral did AIG hold in support of reinsurance recoverable assets from unaffiliated reinsurers at December 31, 2018? Only give the numerical output and stick with the writing style in the document",
+        "prompt": "What was the amount of collateral AIG held to support reinsurance recoverables from unaffiliated reinsurers in 2018? Only give the numerical output and stick with the writing style in the document",
         "full_sentence": "At December 31, 2018, we held $20.2 billion of collateral, in the form of funds withheld, securities in reinsurance trust accounts and/or irrevocable letters of credit, in support of reinsurance recoverable assets from unaffiliated reinsurers.",
         "gt_answer": "$20.2 billion",
         "year": "2018",
@@ -142,7 +142,7 @@
     {
         "prompt_id": 13,
         "prompt": "Tell me the cities and states of the offices owned by AIG and its subsidiaries in 2010 in the US. Use only city and state, separate them with '/', and store them in a list ['city-1/state-1', 'city-2/state-2', etc.]. Use the order you see in the document and don't add anything else. And stick with the format of the city name and state name in the document. Don't include the street address name, etc. and don't put duplicated city, state pairs. Don't include locations outside of the US. If you see a location in Puerto Rico, include it as well",
-        "full_sentence": "The following offices are located in buildings owned by AIG and its subsidiaries:\n    Greensboro and Winston-Salem, North Carolina\n    Nashville, Tennessee\n    Amarillo, Ft. Worth and Houston, Texas\n    Stevens Point, Wisconsin\n    San Juan, Puerto Rico\n    175 Water Street in New York, New York\n    Livingston, New Jersey",
+        "full_sentence": "The following offices are located in buildings owned by AIG and its subsidiaries:\nGreensboro and Winston-Salem, North Carolina\nNashville, Tennessee\nAmarillo, Ft. Worth and Houston, Texas\nStevens Point, Wisconsin\nSan Juan, Puerto Rico\n175 Water Street in New York, New York\nLivingston, New Jersey",
         "gt_answer": [
             "Greensboro/North Carolina",
             "Winston-Salem/North Carolina",
@@ -161,7 +161,7 @@
     {
         "prompt_id": 14,
         "prompt": "Tell me the cities and states of the offices owned by AIG and its subsidiaries in 2016 in the US. Use only city and state, separate them with '/', and store them in a list ['city-1/state-1', 'city-2/state-2', etc.]. Use the order you see in the document and don't add anything else. And stick with the format of the city name and state name in the document. Don't include the street address name, etc. and don't put duplicated city, state pairs. Don't include locations outside of the US. If you see a location in Puerto Rico, include it as well",
-        "full_sentence": "The following offices are located in buildings in the United States owned by us:\n    Property Casualty Insurance Companies:\n    \u2022 Stevens Point, Wisconsin\n    Life Insurance Companies:\n    \u2022 Amarillo and Houston, Texas\n    Other Operations:\n    \u2022 175 Water Street in New York, New York\n    \u2022 Livingston, New Jersey\n    \u2022 Stowe, Vermont\n    \u2022 Ft. Worth, Texas",
+        "full_sentence": "The following offices are located in buildings in the United States owned by us:\nProperty Casualty Insurance Companies:\n\u2022 Stevens Point, Wisconsin\nLife Insurance Companies:\n\u2022 Amarillo and Houston, Texas\nOther Operations:\n\u2022 175 Water Street in New York, New York\n\u2022 Livingston, New Jersey\n\u2022 Stowe, Vermont\n\u2022 Ft. Worth, Texas",
         "gt_answer": [
             "Stevens Point/Wisconsin",
             "Amarillo/Texas",

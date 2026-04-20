@@ -100,9 +100,10 @@ class Eval:
             retrieved_set = set(top_k_chunks)
 
             if len(relevant_set) == 0:
-                continue
-            
-            recall = len(relevant_set & retrieved_set) / len(relevant_set)
+                print(f"The full answer of the prompt with {prompt_id} ID could not be found in any of the top K chunks")
+                recall = 0
+            else:
+                recall = len(relevant_set & retrieved_set) / len(relevant_set)
             scores.append(recall)
 
         return np.round(np.mean(scores), 3)
@@ -121,7 +122,7 @@ class Eval:
                 if gt_full_sentence in chunk:
                     rr = 1 / (i + 1)
                     break
-
+        
             scores.append(rr)
 
         return np.round(np.mean(scores),3)

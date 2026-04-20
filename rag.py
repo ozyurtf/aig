@@ -8,8 +8,10 @@ from openai import OpenAI
 import time
 import argparse
 from concurrent.futures import ThreadPoolExecutor
-import ast
 from rank_bm25 import BM25Okapi
+from models import *
+import warnings
+warnings.filterwarnings("ignore", category=UserWarning, module="pydantic")
 
 load_dotenv()
 API_KEY = os.getenv("OPENAI_API_KEY")
@@ -65,17 +67,17 @@ def bm25_search(query, df, top_k=10):
     tokenized_query = query.lower().split()
     scores = bm25.get_scores(tokenized_query)
     
-    top_k_indices = pd.Series(scores, index=df.index).nlargest(top_k)
-    return top_k_indices
+    scores = pd.Series(scores, index=df.index).nlargest(top_k)
+    return scores
 
 def hybrid_search(query, query_embedding, df, embeddings, top_k=10, alpha=0.5):
-    emb_scores = cosine_similarity_batch(query_embedding, embeddings)
-    emb_series = pd.Series(emb_scores, index=df.index)
+    emb_scores = pd.Series(
+        cosine_similarity_batch(query_embedding, embeddings), index=df.index
+    )
+    bm25_scores = bm25_search(query, df, top_k=len(df))
     
-    bm25_series = bm25_search(query, df, top_k=len(df))
-    
-    emb_norm = (emb_series - emb_series.min()) / (emb_series.max() - emb_series.min())
-    bm25_norm = (bm25_series - bm25_series.min()) / (bm25_series.max() - bm25_series.min())
+    emb_norm = (emb_scores - emb_scores.min()) / (emb_scores.max() - emb_scores.min())
+    bm25_norm = (bm25_scores - bm25_scores.min()) / (bm25_scores.max() - bm25_scores.min())
     
     hybrid_scores = alpha * emb_norm + (1 - alpha) * bm25_norm
     
@@ -92,14 +94,15 @@ def rag(args):
         streaming=True
     )
 
-    response = model.invoke([
-        SystemMessage(args.query),
-        HumanMessage(f"Please extract the years in the user query and return it in a list (e.g., ['2016', '2017']). If you couldn't detect a year, return 'UNK'")
-    ])    
+    structured_model = model.with_structured_output(YearExtraction)
+    result = structured_model.invoke([
+        SystemMessage("Extract four digit years from the user's query."),
+        HumanMessage(args.query),
+    ])
+    
+    years = result.years 
 
-    years = response.content
-
-    log_step("Years extracted", t0)
+    log_step(f"Years extracted: {years}", t0)
     
     def create_query_embedding(args, client):
         response = client.embeddings.create(
@@ -109,12 +112,8 @@ def rag(args):
         return response.data[0].embedding
 
     def load_embeddings(args, years):
-        df = pd.read_parquet(f"{args.dense_emb_path}")
-        if years == "UNK":
-            filtered_df = df
-        else: 
-            years = ast.literal_eval(years)
-            filtered_df = df[df["year"].isin(years)]
+        df = pd.read_parquet(args.dense_emb_path)
+        filtered_df = df if not years else df[df["year"].isin(years)]
         embeddings = np.stack(filtered_df["embedding"].values)
         return filtered_df, embeddings
 
@@ -147,9 +146,10 @@ def rag(args):
     log_step("Context built", t0)
 
     response = model.invoke([
-        SystemMessage(context),
-        HumanMessage(f"Please answer the user query based on the given context. Here is the user query: {args.query}")
+        SystemMessage(f"Please answer the user query based on the given context {context}"),
+        HumanMessage(args.query)
     ])
+
     log_step("Final LLM response", t0)
 
     pred_answer = response.content
