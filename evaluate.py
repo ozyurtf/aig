@@ -13,7 +13,7 @@ def parse_args():
     parser.add_argument("--gt-path", type=str, default="./ground-truth/ground_truth.json",
                         help="The JSON file that contains ground truth data")
     
-    parser.add_argument("--alpha", type=float, default=0.0,
+    parser.add_argument("--alpha", type=float, default=0.5,
                         help="Hybrid search balance: 0=pure BM25, 1=pure embedding")
 
     parser.add_argument("--dense-emb-path", type=str, default="./vector-database/config_text-embedding-3-small_2000_100/aig.parquet",
